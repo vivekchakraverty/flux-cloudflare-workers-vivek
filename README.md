@@ -32,4 +32,4 @@ npx wrangler deploy
 
 - Web URL: https://your-project-domain.workers.dev/?key=your-password
 
-- API Endpoint: https://your-project-domain/api/generate?key=your-password&prompt=your-prompt
+- API Endpoint: https://your-project-domain/api/generate?key=your-password&prompt=your-prompt&steps=8

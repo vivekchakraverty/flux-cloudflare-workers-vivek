@@ -4,7 +4,7 @@ export default {
 	  const url = new URL(request.url);
 	  const key = url.searchParams.get('key');
 	  const prompt = url.searchParams.get('prompt');  
-	  const num_steps = url.searchParams.get('step') || 8; 
+	  const num_steps = url.searchParams.get('steps') || 8; 
   
 	  // 打印日志以帮助调试
 	  console.log('Requested URL:', url.toString());
@@ -55,16 +55,20 @@ export default {
 		  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 		  <title>FLUX Generate</title>
 		  <style>
+			html, body {
+				height: 100%; /* 使页面高度充满整个视口 */
+				margin: 0;
+				padding: 0;
+			}
+
 			body {
 			  font-family: 'Arial', sans-serif;
 			  background-color: #000000;
 			  margin: 0;
 			  padding: 0;
-			  // height: 100vh;
-			  // overflow: hidden;
 			  display: flex;
 			  flex-direction: column;
-			  justify-content: center;
+			  justify-content: space-between;;
 			  align-items: center;
 			  position: relative;
 			  color: #333;
@@ -74,6 +78,7 @@ export default {
 			  backdrop-filter: brightness(0.5) blur(12px);
 			  -webkit-backdrop-filter: brightness(0.5) blur(12px);
 			}
+
 		
 			.container {
 			  margin-top: 25px;
@@ -83,9 +88,11 @@ export default {
 			  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 			  text-align: center;
 			  max-width: 600px;
+			  max-height: 1059px;
 			  width: 100%;
 			  z-index: 1;
 			  transition: transform 0.3s ease-in-out;
+			  flex: 1;
 			}
 		
 			.container:hover {
@@ -182,7 +189,7 @@ export default {
 			.form-container {
 			  margin-top: 20px;
 			}
-		
+
 			footer {
 			  display: flex;
 			  color: #888;
@@ -195,7 +202,7 @@ export default {
 			  flex-direction: column;
 			  align-items: center;
 			  justify-content: center;
-		  }
+		  	}
 		
 			footer p {
 			  margin: 5px 0;
@@ -285,7 +292,7 @@ export default {
   
 			  try {
 				// 使用 fetch 异步提交请求
-				const response = await fetch(\`/api/generate?key=${env.KEYHOLDER}&prompt=\${encodeURIComponent(prompt)}&num_steps=\${num_steps}\`);
+				const response = await fetch(\`/api/generate?key=${env.KEYHOLDER}&prompt=\${encodeURIComponent(prompt)}&steps=\${num_steps}\`);
   
 				if (response.ok) {
 				  const imageBlob = await response.blob();
