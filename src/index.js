@@ -71,7 +71,7 @@ export default {
 			  justify-content: space-between;;
 			  align-items: center;
 			  position: relative;
-			  color: #333;
+			  color: aliceblue;
 			  background-size: cover;
 			  background-position: center;
 			  transition: background 0.5s ease;
@@ -82,7 +82,7 @@ export default {
 		
 			.container {
 			  margin-top: 25px;
-			  background-color: rgba(255, 255, 255, 0.9);
+			  background-color: #0000008c;
 			  padding: 30px 40px;
 			  border-radius: 15px;
 			  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
@@ -108,7 +108,7 @@ export default {
 		
 			label {
 			  font-size: 18px;
-			  color: #333;
+			  color: aliceblue;
 			  margin-bottom: 10px;
 			  display: block;
 			  font-weight: 500;
@@ -139,7 +139,7 @@ export default {
 			  display: block;
 			  font-size: 18px;
 			  font-weight: 500;
-			  color: #333;
+			  color: aliceblue;
 			}
 		
 			button {
