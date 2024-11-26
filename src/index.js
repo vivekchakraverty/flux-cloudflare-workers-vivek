@@ -320,38 +320,7 @@ export default {
 		</html>
 		`, { headers: { 'Content-Type': 'text/html' } });
 	  }
-  
-	  // 如果是 POST 请求，处理表单提交
-	  if (request.method === 'POST') {
-		// 获取表单数据
-		const formData = await request.formData();
-		const prompt = formData.get('prompt');
-		const num_steps = formData.get('num_steps') || 8; // 默认值为 8
-  
-		const generation_setting = {
-		  prompt: prompt,
-		  num_steps: parseInt(num_steps),
-		}
-  
-		try {
-		  // 调用 AI.run 接口生成图像
-		  const response = await env.AI.run('@cf/black-forest-labs/flux-1-schnell', generation_setting);
-		  console.log('flux loaded');
-  
-		  // 将返回的图像二进制数据转换为 Uint8Array
-		  const binaryString = atob(response.image);
-		  const img = Uint8Array.from(binaryString, (m) => m.codePointAt(0));
-  
-		  // 返回生成的图像
-		  return new Response(img, {
-			headers: { 'content-type': 'image/png' },
-		  });
-		} catch (err) {
-		  console.error('Error generating image:', err);
-		  return new Response('Failed to generate image', { status: 500 });
-		}
-	  }
-  
+    
 	  // 处理其他请求方式（如 PUT、DELETE）
 	  return new Response('Method Not Allowed', { status: 405 });
 	},
