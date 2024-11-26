@@ -244,7 +244,7 @@ export default {
 			<h1>flux-1-schnell 图像生成</h1>
 			<form id="generate-form" action="#" method="POST" class="form-container">
 			  <label for="prompt">输入提示词 Prompt:</label>
-			  <textarea id="prompt" name="prompt" required placeholder="anime style cute girl with cat ears"></textarea>
+			  <textarea id="prompt" name="prompt" placeholder="very cute anime girl with fox ear and kimono"></textarea>
 			  <label for="num_steps">选择生成步数 Steps (4 - 8):</label>
 			  <input type="range" id="num_steps" name="num_steps" min="4" max="8" value="8" step="1">
 			  <span id="num_steps_value">8</span>
@@ -275,7 +275,7 @@ export default {
 			  event.preventDefault(); // 防止默认的表单提交行为
   
 			  // 获取用户输入的 prompt 和 num_steps
-			  const prompt = document.getElementById('prompt').value.trim(); // 获取输入框中的值并去除多余空格
+			  const prompt = document.getElementById('prompt').value.trim() || 'very cute anime girl with fox ear and kimono'; // 获取输入框中的值并去除多余空格
 			  const num_steps = range.value;
   
 			  // 检查 prompt 是否为空
