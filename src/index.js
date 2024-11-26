@@ -243,9 +243,9 @@ export default {
 		  <div class="container">
 			<h1>flux-1-schnell 图像生成</h1>
 			<form id="generate-form" action="#" method="POST" class="form-container">
-			  <label for="prompt">输入提示词:</label>
+			  <label for="prompt">输入提示词 Prompt:</label>
 			  <textarea id="prompt" name="prompt" required placeholder="anime style cute girl with cat ears"></textarea>
-			  <label for="num_steps">选择生成步数 (4 - 8):</label>
+			  <label for="num_steps">选择生成步数 Steps (4 - 8):</label>
 			  <input type="range" id="num_steps" name="num_steps" min="4" max="8" value="8" step="1">
 			  <span id="num_steps_value">8</span>
 			  <button type="submit">生成!</button>
