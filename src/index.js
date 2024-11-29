@@ -254,7 +254,7 @@ export default {
 		  </div>
 		  <footer>
 			<p>API endpoint: /api/generate?key=${env.KEYHOLDER}&prompt=lava%20lamp&steps=8</p>
-			<p>Powered by Cloudflare Workers</p>
+			<p>Powered by Cloudflare Workers with <a href="https://github.com/chthollyphile/flux-cloudflare-workers">chthollyphile/flux-cloudflare-workers/</a></p>
 		  </footer>
 		  <script>
 		  document.addEventListener('DOMContentLoaded', function () {
