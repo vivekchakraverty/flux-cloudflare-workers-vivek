@@ -56,9 +56,11 @@ export default {
 		  <title>FLUX Generate</title>
 		  <style>
 			html, body {
-				// height: 100%;
 				margin: 0;
 				padding: 0;
+				min-height: 100vh;
+				display: flex;
+				flex-direction: column;
 			}
 
 			body {
@@ -194,6 +196,7 @@ export default {
 			  display: flex;
 			  color: #888;
 			  margin-top: 30px;
+			  margin-bottom: 20px;
 			  font-size: 14px;
 			  width: 100%;
 			  text-align: center;
