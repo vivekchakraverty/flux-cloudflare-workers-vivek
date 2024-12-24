@@ -102,7 +102,7 @@ export default {
 			}
 		
 			h1 {
-			  color: #4CAF50;
+			  color: #c3abfa;
 			  font-size: 28px;
 			  margin-bottom: 20px;
 			  font-weight: 600;
